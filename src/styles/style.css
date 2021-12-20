@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* ============================================================== */
+
+.container__login {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.login__information {
+    z-index: 100000;
+    min-width: 50%;
+    color: #fff;
+    font-size: 20px;
+}
+
+.login__information div {
+    margin: 20px;
+    font-weight: 600;
+}
+
+.login__information > p {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.login__form {
+    z-index: 100000;
+    min-width: 50%;
+    height: 100vh;
+    background: rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 4px );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__form > div {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text_init {
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.form__login {
+    width: 100%;
+}
+
+.form__login > input {
+    margin-top: 10px;
+    display: block;
+    outline: none;
+    border: 1px solid #ECF0F1;
+    background-color: transparent;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+}
+
+.form__login > input::placeholder {
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.btn_init:hover {
+    color: transparent;
+    background-color: #fff;
+}
+
+.remember_check {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remember_check p {
+    color: #fff;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.btn_init {
+    font-weight: 600;
+}
+
+.btn_init:hover {
+    color: #000;
+    background: rgba( 255, 255, 255, 0.1 );
+    backdrop-filter: blur( 7px );
+}
+
+.background_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    filter: grayscale(76%) brightness(58%) saturate(0%) contrast(74%);
+}
+
+/* ============================================================== */
+
+.swal2-container {
+    z-index: 10000000000000000 !important;
+}
