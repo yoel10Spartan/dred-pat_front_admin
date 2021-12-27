@@ -1,19 +1,18 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../../hook/useForm'
 import { authUser } from '../../stateManagement/actions/auth';
-
 import backgroundImage from '../../assets/3415.jpg';
 
 export const LoginView = () => {
 
+    const dispatch = useDispatch();
+    const { load } = useSelector(state => state.loading);
     const [ values, HandleInputChange, reset ] = useForm({
         username: '',
         password: ''
     });
-
-    const dispatch = useDispatch();
-
+    
     const {username, password} = values;
 
     const handleInitSession = ( event ) => {
@@ -33,10 +32,10 @@ export const LoginView = () => {
             />
             <div className='login__information'>
                 <div>
-                    <p>Tutor o profesor del proyecto</p>
-                    <p>Dr. Lane Frederick Farguer</p>
+                    <p>Tutor del proyecto</p>
+                    <p>Dr. Lane F. Fargher</p>
                 </div>
-                <p>"Proyecto Arqueologico de Tlaxcallan"</p>
+                <p>"Proyecto Arqueológico de Tlaxcallan"</p>
             </div>
             <div className='login__form'>
                 <div>
@@ -58,15 +57,12 @@ export const LoginView = () => {
                             value={ password }
                             onChange={ HandleInputChange }
                         />
-                        <div className='remember_check'>
-                            <input type='checkbox' />
-                            <p>Recordar</p>
-                        </div>
                         <input 
                             type='submit'
-                            value='Iniciar sesion'
+                            value={ load.loadAuth ? 'Cargando...' : 'Iniciar sesion'}
                             onClick={ handleInitSession }
                             className='btn_init'
+                            disabled={ load.loadAuth }
                         />
                     </form>
                 </div>
